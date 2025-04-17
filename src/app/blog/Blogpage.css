@@ -1,0 +1,154 @@
+html {
+  background: url('/safari-background.jpg.jpg') repeat fixed center;
+  background-size: cover;
+}
+
+/* Full Page Background */
+body {
+  background-image: url("/safari-background.jpg"); /*✅ Set background on body */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Prevents scrolling */
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* ✅ Ensures full height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background-attachment: local;
+}
+
+/* General Blog Page Styling */
+.blog-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 80px auto; /* Centers the container */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: rgba(255, 255, 255, 0.466); /* ✅ Adds a semi-transparent white background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* ✅ Adds a soft shadow for better visibility */
+}
+
+/* Blog Heading */
+.blog-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #CC7A3D; /* ✅ Ensures readability */
+  font-weight: bold;
+}
+
+/* Blog Post List */
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  gap: 20px;
+}
+
+/* Blog Post Card */
+.blog-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Blog Post Title */
+.blog-card h2 {
+  font-size: 1.8rem;
+  color: #CC7A3D;
+  margin-bottom: 10px;
+}
+
+/* Blog Excerpt */
+.blog-card p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Read More Link */
+.blog-card a {
+  text-decoration: none;
+  color: #CC7A3D;
+  font-weight: bold;
+}
+
+/* ✅ Tablet View (Medium Screens: 768px - 1024px) */
+@media (max-width: 1024px) {
+  .blog-container {
+    width: 95%;
+    margin: 60px auto;
+    padding: 15px;
+  }
+
+  .blog-heading {
+    font-size: 2.2rem;
+    padding-top: 40px;
+  }
+
+  .blog-card {
+    padding: 15px;
+  }
+
+  .blog-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .blog-card p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✅ Mobile View (Small Screens: Below 768px) */
+@media (max-width: 768px) {
+  .blog-container {
+    width: 95%;
+    margin: 40px auto;
+    padding: 10px;
+    padding-top: 30px;
+  }
+
+  .blog-heading {
+    font-size: 2rem;
+  }
+
+  .blog-card {
+    padding: 10px;
+  }
+
+  .blog-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .blog-card p {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Extra Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .blog-heading {
+    font-size: 1.8rem;
+  }
+
+  .blog-card {
+    padding: 8px;
+  }
+
+  .blog-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .blog-card p {
+    font-size: 0.9rem;
+  }
+}
