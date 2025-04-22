@@ -1,0 +1,217 @@
+/* Base styles for navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 88px;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo a {
+  display: flex;
+  align-items: left;
+  max-width: 100px;
+}
+
+.logo img{
+  width: 120px; /* Adjust size */
+  height: auto; /* Prevent distortion */
+  max-height: 60px; /* Ensure it fits inside navbar */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: #ffb900;
+}
+
+.nav-links a,
+.nav-links button {
+  font-size: 16px; /* Match the size of links */
+  font-weight: 500; /* Match the weight of links */
+  color: black; /* Same color as links */
+  font-weight: bold;
+  text-decoration: none;
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Ensure clickable */
+  padding: 10px 15px; /* Same padding as links */
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #f5a623; /* Add hover effect */
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger svg {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger.open svg {
+  transform: rotate(90deg);
+}
+
+/* Tablet */
+/* === 📱 Mobile & 📲 Tablet (Both use Hamburger Menu) === */
+@media (max-width: 1024px) {
+
+  .logo-img {
+    width: 20px;
+  }
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.47);
+    backdrop-filter: blur(11.2px);
+    text-align: center;
+    padding-top: 5rem;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    right: 0;
+    height: 100vh;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* Show Hamburger Icon */
+  .hamburger {
+    display: block;
+  }
+
+  /* === Close Button (X) - Bigger & Properly Centered === */
+.close-btn {
+  position: absolute;
+  top: 10px; /* Move it higher */
+  left: 45%; /* Move it slightly more left */
+  transform: translateX(-25%);
+  width: 45px;
+  height: 45px;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Make the SVG icon bigger */
+.close-btn svg {
+  width: 50px;
+  height: 50px;
+  stroke: white;
+}
+
+/* Show Close Button only when menu is open */
+.nav-links.open .close-btn {
+  display: block;
+}
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hidden off-screen */
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.47);
+    backdrop-filter: blur(11.2px);
+    text-align: center;
+    padding-top: 5rem;
+    transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  }
+
+  .nav-links.open {
+    right: 0; /* Slide in from right */
+  }
+
+  .nav-links a,
+  .nav-links button {
+    display: block;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover,
+  .nav-links button:hover {
+    color: #f5a623;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 60;
+  }
+
+  /* === Close Button (X) - Bigger & Properly Centered === */
+.close-btn {
+  position: absolute;
+  top: 10px; /* Move it higher */
+  left: 45%; /* Move it slightly more left */
+  transform: translateX(-56%);
+  width: 45px;
+  height: 45px;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Make the SVG icon bigger */
+.close-btn svg {
+  width: 50px;
+  height: 50px;
+  stroke: white;
+}
+
+/* Show Close Button only when menu is open */
+.nav-links.open .close-btn {
+  display: block;
+}
+
+  .close-btn:hover {
+    color: #f5a623;
+  }
+}
